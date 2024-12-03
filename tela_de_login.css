@@ -53,44 +53,75 @@ h2 {
 
   .user-box{
     position: relative;
+    padding-top: 13px;
   }
 
 
 .user-box input {
-    width: 15rem;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 3rem;
     border: none;
-    border-right: none;
     border-bottom: 2px solid #fff;
     outline: none;
+    width: 15rem;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;
+    border-radius: 0;
+    color: #fff;
+    margin-bottom: 3rem;
+    border-right: none;
     background: none;
+  }
+
+  .user-box input:focus{
+    border-bottom: 2px solid #fff;
+  }
+
+  .user-box input::placeholder{
+    color: #000;
   }
 
 
 .user-box label {
+    pointer-events: none;
     position: absolute;
+    top: -0.5rem;
     left: 22.5rem;
-    padding: .2rem 0 3rem 0;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
     font-size: 1rem;
     color: #fff;
-    transition: .5s;
+    /* transition: .5s; */
   }
   
-.user-box input:focus ~ label,
+  .user-box input:focus:required:invalid{
+    border-bottom: 2px solid #fff;
+  }
+
+  .user-box input:focus + label,
+.user-box input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  margin-top: 0;
+  color: #3951b2;
+}
+
+/* .user-box input:focus ~ label,
   .user-box input:valid ~ label {
     position:absolute;
     top: -1rem;
     color: #fff;
     font-size: 12px;
-  }
+  } */
   
+
 .forgot-password{
   display: block;
   margin-right: 6.5rem;
   margin-bottom: 3.5rem;
 }
+
 
   a{
     color: #fff;
